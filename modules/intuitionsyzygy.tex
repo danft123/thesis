@@ -1,0 +1,51 @@
+\section{Syzygies and Gradients}
+\subsection{Dual Curves and Polars}
+\begin{definition}[Dual Projective Space]
+Let $P^n$ be a projective space with homogeneous coordinates $(x_0;,,,;x_n)$, then the dual projective space ${P^n}^*$ is a projective space with coordinates $(\lambda_0;,,,;\lambda_n)$ such that $\lambda_i$ represents a hyperplane $\sum_i \lambda_i x_i = 0$.
+\end{definition}
+Given a homogeneous polynomial $f \in H^0 \SO(d)$ there is a rational map $\nabla f: \mathbb{P}^n \to (\mathbb{P}^n)^*$ taking $p \mapsto (\partial_i f(p))$.
+\begin{definition}[Dual Variety]
+Let $X = V(f)$ be a irreducible projective variety. We define the dual variety $X^*$ to be the image of $\nabla f:X_{sm} \to (\mathbb{P}^n)^*$ where $X_{sm} \subset X$ is the smooth locus.
+\end{definition}
+\begin{remark}
+The dual variety $X^*$ can be see as a variety in $\mathbb{P}^n \times (\mathbb{P}^n)^*$ described as the closure of pairs $(p,H)$ such that $p \in X_{sm}$ and $H$ is the tangent hyperplane to $X$ at $p$.
+\end{remark}
+Let $C \subset \PS$ be a plane curve defined by a square-free polynomial $f$ and consider the rational map $\nabla f$, there is an unique square-free polynomial $f^*$ such that $V(f^*) = C^*$. Duality operation also commutes with factorization of $f$.
+\begin{definition}
+Consider $d^* = deg C^*$ called the class of $C$, using Plücker formula gives $d^*=d(d-1)-2\delta-3\kappa$ where $\delta$ is the number of ordinary nodes and $\kappa$ are ordinary cusps, higher order singularites are counted multiple times as ordinary singularities.
+$d^*$ represents the number of tangent lines to $C$ passing through a general point in $\mathbb{P}^2 - C$
+\end{definition}
+
+\begin{remark}
+Let $p \in C$ be non-singular, then the tangent of a curve at $p$ is given by equation ($f_i$ are the partial derivatives of $f$):
+\begin{equation}\label{tangent_eq}
+({f_0}_{|_p}) x + ({f_1}_{|_p}) y + ({f_2}_{|_p}) z = 0
+\end{equation}
+Let $a \in \PS$ and consider the following equation:
+\begin{equation}\label{fixedpt_eq}
+({f_0}) a_0 + ({f_1}) a_1 + ({f_2}) a_2 = 0
+\end{equation}
+The solutions for equation (\ref{fixedpt_eq}) intersected with $C$ are $p \in C$ such that $T_p C \in \PS^*$ passes through $a$, we will denote this set by $C_a$. It is called the polar to the curve $C$ at $a$.
+\end{remark}
+
+\begin{remark}\label{fixedpt_remark}
+Using the same notation from our last remark, let $a \in \PS$ such that
+\begin{equation}
+({f_0}) a_0 + ({f_1}) a_1 + ({f_2}) a_2 = 0 \ \forall p \in C
+\end{equation}
+Then $C_a = C$, which implies that every tangent line must contain $a$
+\end{remark}
+
+\subsection{Syzygies}
+\begin{remark}
+Let $\nabla f: 3 \SO \to \SO(d)$ and $\mathcal{T}_C$ be the logarithmic sheaf defined as the kernel of $\nabla f$, it is a vector bundle of rank $2$. Let $a$ be a generator of degree $l$ of $Syz(\nabla f)$, hence $a = (a_0, a_1, a_2)$ with $a_i \in H^0 \SO (l)$ and:
+\begin{equation}\label{syzygy_eq}
+    \nabla f . a = 0
+\end{equation}
+If $l = 0$ then (\ref{syzygy_eq}) implies that $C_a = C$ (remark \ref{fixedpt_remark}), it follows that every tangent line must pass through $a$.
+If $l>0$ then for every $p \in C$ we have
+\begin{equation}
+    \nabla f (p) . a(p) = 0
+\end{equation}
+In other words: $a(p) \in T_p C \subset \PS^*$
+\end{remark}

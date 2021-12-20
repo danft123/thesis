@@ -1,0 +1,72 @@
+% this section contains old computations made, it might be useful someday
+% here we have some relationships betwen I_Z and I_J
+\section{Moduli}
+\subsection{first part}
+\begin{theorem}
+Let $F$ be a family of sheaves on $X$ parameterized by $S$, suppose that there is a $s \in S$ such that $F_s = F|_{X \times \{s \}}$ is torsion-free. Then there is $S' \subset S$ open such that $F_s$ is torsion-free for any $s \in S'$.
+\end{theorem}
+\begin{dem}
+\textcolor{red}{olhar huybrecht}
+\end{dem}
+Fix $S=Quot^P(E)$ where $P$ is a Hilbert polynomial and $E$ a sheaf on $X$ and let $F$ be the universal sheaf on $S \times X$, it then follows from last theorem that torsion-freeness is an open condition for a family of sheaves.
+\subsection{second part}
+
+Let $f \in k[x_0,x_1,x_2]$ be homogeneous, $\mathcal{I}_J$ be the Jacobian ideal of $f$ and $P$ be the Hilbert polynomial of $\mathcal{I}_J(d)$, furthermore let $Quot^P(\mathcal{O}_{\mathbb{P}^2}^{\oplus 3})$ be the Quot scheme and consider the open subset $\mathcal{D}_0 = \{(N,\varphi) \in \mathcal{D} \}$ with $N$ torsion-free \cite[Proposition 2.1]{Maruyama1976OpennessOA}. Then
+\begin{equation}\label{main}
+0 \to E \to 3\mathcal{O}_{\mathbb{P}^2} \to N \to 0 
+\end{equation}
+
+where $E$ is a rank $2$ reflexive sheaf, hence a vector bundle.
+
+Since $N$ is torsion-free there is a canonical injective morphism $N \to N^{\star \star} = \mathcal{O}_{\mathbb{P}^2}(d)$ defining $F:3\mathcal{O}_{\mathbb{P}^2} \to \mathcal{O}_{\mathbb{P}^2}(d)$. If $F_1,F_2,F_3$ are its components (which are just the partial derivatives of $f$) then we can define a $3 \times 3$ matrix $H F$ given by $(\partial_i F_j)_{ij}$. \textbf{$F$ is a gradient map if and only if $H F$ is symmetric.}.
+
+
+
+\begin{theorem}\cite{Lossen2004WhenDT}
+Let $f \in K[x_0,...,x_n]$, $n \in \{1, 2, 3\}$ be a homogeneous polynomial over an algebraically closed field of characteristic zero. Then the following are equivalent:
+
+\begin{itemize}
+    \item $det Hf \equiv 0$
+    \item The partial derivatives $\partial_i f$ are linearly dependent (over $K$)
+    \item $V(f)$ is a cone, that is, it depends on at most $n$ variables after a suitable homogeneous change of coordinates.
+\end{itemize}
+\end{theorem}
+
+Let $\eta : \mathbb{P}H^0 \SO(d+1) \to W:= (End(k^3) \otimes H^0\mathcal{O}_{\mathbb{P}^2}(d))/\sim$ be the morphism taking $(N,\varphi)$ to the isomorphism class $[H f]$. If $deg(f)=d+1 \geq 2$ then $[H f] = [H g]$ implies that $[f]=[g]$ since $\nabla f = \nabla g \iff \nabla(f-g)=0 \iff f-g=cte$ ($cte$ can only be $0$ due to degree).
+
+Then $\mathcal{M}_P := \eta^{-1}(W)$ is a locally closed subset which parameterizes logarithmic sheaves.
+
+\subsection{Trying to refine the construction}
+
+Let $S:=\mathbb{P}H^0 \SO(d+1)$, suppose we have a bundle $\mathcal{E} \to X:=S \times \mathbb{P}^2$ such that $\mathcal{E}_{\{f\}\times \mathbb{P}^2}=ker \nabla f$. Define $S(d,\delta,n):= \{[f] \in \mathbb{P} H^0 \SO(d+1) |\partial_i f$ has common factor of degree $\delta, \ H^0 \iext^2( coker \nabla f,\SO)=n   \}$. \textcolor{blue}{Vejo um problema aqui, esse n acaba saindo como o comprimento do esquema jacobiano J, e nao de Z. Este último depende também de uma seção nao nula, de qualquer jeito vou deixar escrito a explicacao do porque usar h0 do Ext para referencia}
+
+\begin{remark}
+\textcolor{red}{explanation of $n$ in the definition}: Let $Y$ denote the scheme defined by the common factor, and $J$ defined by the image $im \nabla f = \mathcal{I}_J(d-\delta)$. Then $0 \to \mathcal{O}_J \to coker \nabla f \to \mathcal{O}_Y \to 0$ implies (since $\mathcal{O}_Y$ has dim 1) $\iext^2(coker \nabla f,\SO) \cong \iext^2(\mathcal{O}_J,\SO)$. Using the local to global sequence we get the equality $h^0\iext^2(\mathcal{O}_J,\SO) = dim Ext^2(\mathcal{O}_J,\SO)$, using Serre duality $h^0 \iext^2(\mathcal{O}_J,\SO) = dim Hom(\mathcal{O},\mathcal{O}_J(3))=h^0(\mathcal{O}_J)$ since $J$ has dimension $0$. So $J$ has length $n$. \textcolor{blue}{deveria ser o comprimento de Z!}
+\end{remark}
+
+\textcolor{blue}{Na proxima observacao vou tentar dar uma possivel direção do que substituir na definicao}
+
+\begin{remark}
+Let $\beta: \SO(-a) \to 3 \SO$ be a non-zero section where $a$ is the smallest degree where $\nabla f \circ \beta = 0$. Then we have:
+\begin{equation}
+    0 \to \mathcal{I}_Z(a-d) \to coker \beta \to \mathcal{I}_J(d) \to 0
+\end{equation}
+Let $p := h^0(\mathcal{O}_J)$ and $n := h^0(\mathcal{O}_Z)$. Then $n = a^2-ad+d^2-p$. From the last remark we know that $p=H^0 \mathcal{E}xt^2(coker \nabla f,\SO)$. \textcolor{red}{How do we include n from n-free in the definition? It depends heavily on $a$. But it seems that fixing a hilbert polynomial $P$ of the jacobian scheme $J$ defines uniquely a hilbert polynomial of $Z$. In other words: does fixing the Hilbert polynomial of $J$ defines uniquely $a$?}.
+\end{remark}
+
+Our strategy consists on the following theorem:
+\begin{theorem}(Flattening Stratification)
+Let $f: X \to S$ be a projective morphism over a Noetherian scheme $S$ and let $\mathcal{F}$ be a coherent sheaf on $X$. For every polynomial $P$ there exists a locally closed subscheme $i_P : S_P \subset S$ such that a morphism $\varphi : T \to S$ factors through $S_P$ if and only if $\varphi ^* \mathcal{F}$ on $T \times_S X$ is flat over $T$ with Hilbert polynomial $P$. Moreover $S_P$ is nonempty for finitely many $P$ and the disjoint union of inclusions
+$$i : S' = \bigsqcup_P S_P \to S $$ induces a bijection on the underlying set of points. That is $\{S_P \}$ is a locally closed stratification of $S$.
+\end{theorem}
+
+\subsection{Construction}
+\textcolor{red}{Suppose we already have a nice definition of $S(d,\delta,n)$, here is how we wish to continue from this}
+For $\delta = 0$, we have that each curve in $S(d,0,n)$ defines a $n-free$ bundle $E$ and a scheme $J$ (the jacobian scheme given by the partial derivatives of $f$). 
+
+Since each $(d,\delta,n)$ fix a Hilbert polynomial, we wish to show that there is a stratification $S=\bigsqcup_{\delta,n} S(d,\delta,n)$.
+
+
+Notice that in a sense (as sets) we have $S(d,\delta,n) \subset Quot^P(3\SO)$ given by $f \mapsto [3\SO \to \mathcal{I}_Z(d-\delta)]$. Let $p,q$ be the projections to $S$ and $\mathbb{P}^2$ respectively. Consider the map $3p^*\SO \otimes q^* \mathcal{O}_S \to p^* \SO(d-1) \otimes q^* \mathcal{O}_S(1)$ which should be though as choosing a curve of degree $d$ (as element of $S$) and producing the gradient map on $\mathbb{P}^2$. (\textcolor{red}{pensar melhor sobre}). Then the kernel of this map is $\mathcal{E}$.
+
+Since $S(d,\delta,n) \subset Quot^P(3\SO)$ we can apply now a construction $\mathcal{F}\to Quot \times \mathbb{P}^2 \to \mathbb{P}^2$ where $\mathcal{F}$ comes from $\mathcal{E}$, which parameterizes logarithmic sheaves.

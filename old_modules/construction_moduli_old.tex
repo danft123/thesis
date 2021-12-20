@@ -1,0 +1,79 @@
+\section{Logarithmic Sheaves}
+Our objective is to define a moduli space parameterizing logarithmic sheaves attached to hypersurfaces in $\mathbb{P}^2$. Suppose we are given a square-free polynomial $f \in H^0 \SO(d+1)$ and let $\nabla f: 3\SO \to \SO(d)$ be the Jacobian matrix, then $\nabla f$ defines a map $\phi:3\SO \to im(\nabla f)$ with $im(\nabla f) = \mathcal{I}_J(d)$ where $J$ is the variety defined by the partial derivatives of $f$.
+
+\begin{remark}
+If $J \not= \emptyset$ then it is a zero-dimensional scheme since $\mathcal{I}_J$ is torsion-free (the codimension of the singularity set of a coherent and torsion-free must be at least $2$).
+\end{remark}
+
+
+\subsection{Before Hilbert polynomial! merge sections after writing}
+Fix an integer $d>0$, let $W_d = Hom(3\SO,\SO(d))$ as vector space and let $Quot(3\SO)$ be the Quot scheme representing the Quot functor $Quot_{3\SO}$.
+
+Since $Hom_{X \times_k Y}(A \boxtimes B , A' \boxtimes B') \cong Hom_X(A,A') \otimes_k Hom_Y(B,B')$ we can define a morphism of sheaves $\phi:3\SO \boxtimes \mathcal{O}_{\mathbb{P}W_d} \to \SO(d) \boxtimes \mathcal{O}_{\mathbb{P}W_d}(1)$ by giving an element $\sum_{i=1}^N e_i \otimes_k f_i$ where $\{e_i\}_{i=1,...,N}$ is a basis for $W_d$ and $f_i$ its respective projective coordinates.
+
+\begin{remark}
+Let $[h] \in \mathbb{P}W_d$ be a point represented by $h = (a_1,...,a_N)$, then $\phi_{\mathbb{P}^2 \times \{[h]\} }$ corresponds to a class given by a matrix $\sum_{i=1}^N a_i e_i$, which is just $[h]$.
+\end{remark}
+
+Any $[h] \in \mathbb{P}W_d$ gives a well defined element $3\SO \twoheadrightarrow im(h)$
+
+
+\subsection{Given Hilbert polynomial of Jacobian ideal of n points}
+Fix an integer $d > 0$ and $P = P_{\SO(d)}-P_{\mathcal{O}_J}$ a Hilbert polynomial where $J$ is a zero dimensional scheme. Let $W_d = Hom(3\SO,\SO(d))$ as vector space and denote the (open) set of torsion-free quotients of $Quot^P(3\SO)$ by $Quot_{tf}^P(3 \SO)$.
+We also define $W_{d,P} = \{h \in W_d \ | \ P(im(h)) = P \}$ where $P(im(h))$ is the Hilbert polynomial of $im(h)$, note that $W_{d,P}$ is invariant through scalar multiplication so $\mathbb{P}W_{d,P}$ is well defined.
+
+Let $[3 \SO \overset{\phi}{\twoheadrightarrow} Q] \in Quot_{tf}^P(3\SO)$, since $Q$ is torsion-free then $rk Q = 1$, which implies that $Q \cong \mathcal{I}_J (d)$. Taking compositions yields a construction:  
+\begin{equation}
+    3\SO \twoheadrightarrow \mathcal{I}_J(d) \hookrightarrow \SO(d)
+\end{equation}
+Hence $im(h) = <F_1,F_2,F_3>$ is a twisted ideal sheaf of degree $d-1$, in fact any rank 1 sheaf with $P(\mathcal{F}) = P$ must be a twisted ideal sheaf of a $0$-th dimensional scheme with finite length $n$.
+x
+
+\begin{proposition}\label{from_quot}
+Fix $P$ a Hilbert polynomial of some twisted ideal sheaf of degree $d$, then $Quot^P_{tf}(3 \SO) \hookrightarrow \mathbb{P}W_{d,P}$ set theoretically
+\end{proposition}
+\begin{proof}
+We will show that the map $[3 \SO \overset{\phi}{\to} Q] \mapsto \beta \circ i^{**} \circ \phi$ where $\beta \circ i^{**}:Q \hookrightarrow Q^{**} \overset{\cong}{\to} \SO(d)$ is well defined up to scalar multiplication.
+
+Indeed let $(\phi,N) \sim (\phi',N')$ from $Quot^P_{tf}(3 \SO)$ and $F = \ihom (\ihom(-,\SO),\SO)$ be the double dual functor, by definition there is an isomorphism $\epsilon: N \to N'$ such that $\epsilon \circ \phi = \phi'$, it follows then that $\epsilon^{**}:=F(\epsilon)$ is an isomorphism. Since $N$ and $N'$ are torsion-free of rank $1$, there are isomorphisms $\beta, \beta'$ to $\SO(d)$.
+
+Apply $Hom(-,\SO(d))$ on the upper green exact sequence to get the isomorphism $Hom(\SO(d),N^{**}) \cong Hom(\SO(d),\SO(d))$, hence $\beta ' \circ \epsilon^{**}$ induces $g$ thus defining a commutative square.
+\begin{center}
+	\begin{tikzcd}[ampersand replacement=\&]
+	    0 \arrow[rd,green] \& \& \& \& 0 \\
+		\& N^{**} \arrow[dd,"\epsilon^{**}"] \arrow[r,"\beta"] \arrow[rdd,dotted,"\beta ' \circ \epsilon^{**}"] \& \SO(d) \arrow[r] \arrow[dd,blue,"g"] \& 0 \arrow[ru,green] \\
+		3\SO \arrow[ru,"\phi^{**}"] \arrow[rd,"\phi'^{**}"] \& \& \& \\
+		\& N^{**} \arrow[r,"\beta '"] \& \SO(d) \arrow[r] \& 0
+	\end{tikzcd}
+\end{center}
+Finally
+\begin{equation}
+    g \circ \beta \circ \phi^{**} = \beta ' \circ \epsilon^{**} \circ \phi^{**} = \beta ' \circ \phi '^{**}
+\end{equation}
+But $g$ has to be a multiple of identity, hence $\beta \circ \phi^{**}$ and $\beta ' \circ \phi '^{**}$ are the same in $\mathbb{P}W_{d,P}$.
+
+For injectivity suppose that $[Q,\phi],[Q',\phi '] \mapsto [h] \in \mathbb{P}W_{d,P}$, then $h = \eta \circ \phi = \eta ' \circ \phi'$ where $\eta:Q \hookrightarrow Q^{**} \overset{\cong}\to \mathcal{O}(d)$. Now, $\eta$ is injective so taking kernels shows that $ker \phi = ker \phi'$ we also have that that $im(h) = im(\phi) = im(\phi')$ thus $\eta$ induces isomorphisms $\xi:Q \to im(h)$, $\xi':Q \to im(h) $. In particular this implies that there is an isomorphim $\epsilon = {\xi'}^{-1} \circ \xi : Q \to Q'$ such that $\epsilon \circ \phi = {\xi'}^{-1} \circ \xi \circ \phi = {\xi'}^{-1} \circ h = {\xi'}^{-1} \circ \xi' \circ \phi' = \phi'$.
+\end{proof}
+
+\begin{proposition}\label{to_quot}
+Fix $P$ as before, then $\mathbb{P}W_{d,P} \hookrightarrow Quot^P_{tf}(3\SO)$.
+\end{proposition}
+\begin{proof}
+Given a projective class $[h] \in \mathbb{P}W_{d,P}$ with $h \in W_{d,P}$ let $\phi : 3\SO \to im(h)$ be the restriction to image. It induces an element of $Quot(3\SO)$ with $P(im(h)) = P$, thus $[3\SO \overset{\phi}\twoheadrightarrow im(h)] \in Quot^P(3\SO)$. This construction is injective \textcolor{red}{not sure if this is correct} since given $h,h' \in W_{d,P}$ such that $[\phi,im(h)] = [\phi',im(h')]$ are the image of each $h,h'$ implies that there is an isomorphism $\epsilon:im(h) \to im(h')$ with $\epsilon \circ \phi = \phi'$. \textcolor{red}{it seems that we can copy paste the previous proof: but $\epsilon$ induces an isomorphism $\epsilon^{**}: im(h)^{**} \to im(h')^{**}$ such that there is a commuting $\SO(d) \to \SO(d)$ which must be a multiple of identity, hence $h = \lambda h'$, same argument as before}.
+\end{proof}
+
+\textcolor{red}{obs: our morphism can be seen as sheaf:Let $\Psi:\mathbb{P}W_{d,P} \to Quot^P_{tf}(3\SO)$ be the morphism from our previous proposition, it induces a sheaf $\Tilde{\Psi}$ flat over $\mathbb{P}W_{d,P}$, im not using it now}
+
+\begin{remark}
+It is possible to show \textcolor{red}{tenho todas as contas, só nao coloquei aqui} that $\nabla:\mathbb{P}H^0 \SO(d+1) \to \mathbb{P}W_{d}$ taking $[f] \mapsto [f_i]_i$ where $f_i$ are the partial derivatives of $f$ is a morphism in an open set \textcolor{red}{acho que sao os square-free, com certeza contem eles}.
+
+Let $\Psi:\mathbb{P}W_{d,P} \to Quot^P_{tf}(3\SO)$ be the map from proposition (\ref{to_quot}), consider the following composition:
+
+\begin{equation}
+    \mathbb{P}H^0\SO(d+1) \overset{\nabla}{\to} \mathbb{P}W_d  \overset{g}{\to} Quot_{tf}(3\SO)
+\end{equation}
+\textcolor{red}{it is well defined on a open set (square-free)}
+
+where $g:[F_0,F_1,F_2] \mapsto [(F_0,F_1,F_2):3\SO \twoheadrightarrow im(F_0,F_1,F_2) = \mathcal{I}_{(F_0,F_1,F_2)}]$
+
+\end{remark}

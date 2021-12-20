@@ -1,0 +1,69 @@
+\documentclass[notitlepage]{article} 
+
+\usepackage[brazilian]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{tikz}
+\usepackage{csquotes} %If using biblatex
+\usepackage{tikz-cd}
+\usepackage{dsfont}
+\usetikzlibrary{babel}
+\usetikzlibrary{matrix}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage{hyperref}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{mathtools}
+\usepackage{array}
+\usepackage{comment}
+\usepackage[thinlines]{easytable}
+\usepackage{indentfirst}
+\usepackage{titling}
+\usepackage{enumitem}
+\usepackage{biblatex} %Imports biblatex package
+\addbibresource{references.bib} %Import the bibliography file
+
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}
+\newtheorem{proposition}{Proposition}
+\newtheorem{remark}{Remark}
+\newtheorem{example}{Example}
+\newtheorem{dem}{Proof}
+\newtheorem*{dem*}{Proof}
+
+%% AQUI FICAM NOVOS COMANDOS
+\newcommand{\ihom}{\mathcal{H}om}
+\newcommand{\iext}{\mathcal{E}xt}
+\newcommand{\PS}{{\mathbb{P}^2}}
+\newcommand{\SO}{\mathcal{O}_{\mathbb{P}^2}}
+\newcommand{\SF}{\mathcal{F}}
+\newcommand{\SG}{\mathcal{G}}
+\newcommand{\SE}{\mathcal{E}}
+\newcommand{\deriv}{\partial_{x_i}}
+\DeclarePairedDelimiter\ceil{\lceil}{\rceil}
+\DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
+
+
+
+\usetikzlibrary{matrix}
+\title{Arranjos}
+\author{danielrag}
+\date{March 2020}
+
+\begin{document}
+
+%Sections
+    %% intro
+        %% syzygies and gradient
+        \include{modules/intuitionsyzygy}
+    %% beginning
+        %% moduli construction
+        \include{modules/moduliconstruction}
+
+\printbibliography
+
+\end{document}
