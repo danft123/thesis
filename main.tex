@@ -1,7 +1,6 @@
+% config padrao
 \documentclass[notitlepage]{article} 
-
 \usepackage[brazilian]{babel}
-
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
 \usepackage{tikz}
@@ -23,8 +22,9 @@
 \usepackage{titling}
 \usepackage{enumitem}
 \usepackage{biblatex} %Imports biblatex package
+% bibliografia
 \addbibresource{references.bib} %Import the bibliography file
-
+% ambientes customizados
 \newtheorem{theorem}{Theorem}
 \newtheorem{corollary}{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
@@ -34,8 +34,7 @@
 \newtheorem{example}{Example}
 \newtheorem{dem}{Proof}
 \newtheorem*{dem*}{Proof}
-
-%% AQUI FICAM NOVOS COMANDOS
+% comandos customizados
 \newcommand{\ihom}{\mathcal{H}om}
 \newcommand{\iext}{\mathcal{E}xt}
 \newcommand{\PS}{{\mathbb{P}^2}}
@@ -46,24 +45,20 @@
 \newcommand{\deriv}{\partial_{x_i}}
 \DeclarePairedDelimiter\ceil{\lceil}{\rceil}
 \DeclarePairedDelimiter\floor{\lfloor}{\rfloor}
-
-
-
-\usetikzlibrary{matrix}
+% cabeçalho
 \title{Arranjos}
 \author{danielrag}
 \date{March 2020}
-
+% inicio do documento
 \begin{document}
-
-%Sections
+% modulos
     %% intro
         %% syzygies and gradient
         \include{modules/intuitionsyzygy}
     %% beginning
         %% moduli construction
         \include{modules/moduliconstruction}
-
+% gera bibliografia
 \printbibliography
-
+%fim do documento
 \end{document}
