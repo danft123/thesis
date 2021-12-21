@@ -1,22 +1,40 @@
-\section{Logarithmic Sheaves}
-Our objective is to define a moduli space parameterizing logarithmic sheaves attached to hypersurfaces in $\mathbb{P}^2$. Suppose we are given a square-free polynomial $f \in H^0 \SO(d+1)$ and let $\nabla f: 3\SO \to \SO(d)$ be the Jacobian matrix, then $\nabla f$ defines a map $\phi:3\SO \to im(\nabla f)$ with $im(\nabla f) = \mathcal{I}_J(d)$ where $J$ is the variety defined by the partial derivatives of $f$.
+\subsection{Construction of the moduli space of log sheaves}
+Our objective is to define a moduli space parameterizing logarithmic sheaves attached to hypersurfaces in $\mathbb{P}^2$. Suppose we are given a square-free polynomial $f \in H^0 \SO(d+1)$ and let $\nabla f: 3\SO \to \SO(d)$ be the Jacobian matrix, then $\nabla f$ defines a map $\phi:3\SO \to im(\nabla f)$ with $im(\nabla f) = \mathcal{I}_{J_{f}}(d)$ where $J_{f}$ is the variety defined by the partial derivatives of $f$ (we shall write $J$ instead of $J_{f}$ if there is no ambiguity).
 
 \begin{remark}
-If $J \not= \emptyset$ then it is a zero-dimensional scheme since $\mathcal{I}_J$ is torsion-free (the codimension of the singularity set of a coherent and torsion-free must be at least $2$).
+% I_J torsion-free since structure sheaf is torsion-free, and subsheaf of t-f is t-f
+If $J \not= \emptyset$ then proposition (\ref{singularitysetcodim}) tells us that $J$ is a zero-dimensional scheme since $\mathcal{I}_J$ is torsion-free and $S((f)) = J$ as sets.
 \end{remark}
 
+Fix an integer $d>0$, let $W_d = Hom(3\SO,\SO(d))$ as vector space and let $Quot(3\SO)$ be the Quot scheme representing the Quot functor $Quot_{3\SO}$, in addition let $Quot_{tf}(3\SO)$ denote the open set of torsion-free quotients.
 
-\subsection{Before Hilbert polynomial! merge sections after writing}
-Fix an integer $d>0$, let $W_d = Hom(3\SO,\SO(d))$ as vector space and let $Quot(3\SO)$ be the Quot scheme representing the Quot functor $Quot_{3\SO}$.
+\begin{lemma}
+There exists a morphism $\psi:\mathbb{P}W_d \to Quot_{tf}(3\SO)$ parameterizing matrices of the form $3\SO \to \SO(d)$
+\end{lemma}
+\begin{dem*}
+Since $Hom_{X \times_k Y}(A \boxtimes B , A' \boxtimes B') \cong Hom_X(A,A') \otimes_k Hom_Y(B,B')$ \cite[\href{https://stacks.math.columbia.edu/tag/0BEC}{Tag 0BEC}]{stacks-project} we can define a morphism of sheaves $\phi:3\SO \boxtimes \mathcal{O}_{\mathbb{P}W_d} \to \SO(d) \boxtimes \mathcal{O}_{\mathbb{P}W_d}(1)$ by giving an element $\sum_{i=1}^N e_i \otimes_k f_i$ where $\{e_i\}_{i=1,...,N}$ is a basis for $W_d$ and $f_i$ its respective projective coordinates. In particular for any $[h] \in \mathbb{P}W_d$ represented by $h = (a_1,...,a_N)$ we have that $\phi|_{\mathbb{P}^2 \times \{[h] \}} = [h]$. \textcolor{red}{tem como deixar melhor essa ultima igualdade?}
 
-Since $Hom_{X \times_k Y}(A \boxtimes B , A' \boxtimes B') \cong Hom_X(A,A') \otimes_k Hom_Y(B,B')$ we can define a morphism of sheaves $\phi:3\SO \boxtimes \mathcal{O}_{\mathbb{P}W_d} \to \SO(d) \boxtimes \mathcal{O}_{\mathbb{P}W_d}(1)$ by giving an element $\sum_{i=1}^N e_i \otimes_k f_i$ where $\{e_i\}_{i=1,...,N}$ is a basis for $W_d$ and $f_i$ its respective projective coordinates.
+We can write $\phi:\pi_{\mathbb{P}^2}^* 3\SO \twoheadrightarrow \mathcal{E}$, where $\mathcal{E} = im(\phi)$, if (\textcolor{red}{como provar flatness aqui?}) $\mathcal{E}$ is flat over $\mathbb{P}W_d$ then we would have defined a family of quotients of $3\SO$ parameterized by $\mathbb{P}W_d$.
 
-\begin{remark}
-Let $[h] \in \mathbb{P}W_d$ be a point represented by $h = (a_1,...,a_N)$, then $\phi_{\mathbb{P}^2 \times \{[h]\} }$ corresponds to a class given by a matrix $\sum_{i=1}^N a_i e_i$, which is just $[h]$.
-\end{remark}
+\textcolor{red}{aqui vamos assumir ser flat}
 
-Any $[h] \in \mathbb{P}W_d$ gives a well defined element $3\SO \twoheadrightarrow im(h)$
+Hence we have a map $\psi:\mathbb{P}W_d \to Quot_{tf}(3\SO)$ given by $s=[h] \mapsto q|_{\mathbb{P}^2 \times \{s \}}$.
+\end{dem*}
 
+\begin{proposition}
+$\psi$ is injective
+\end{proposition}
+\begin{dem*}
+Let $[h],[h'] \in \mathbb{P}W_d$ such that $\psi([h])=\psi([h']) \in Quot(3\SO)$ and denote $\Tilde{h}:3\SO \to im(h)$ the restriction to its image. So there is an isomorphism $\epsilon:im(h) \to im(h')$ such that $\epsilon \circ \Tilde{h} = \Tilde{h'}$. But $im(h)^{**} \cong im(h')^{**} \cong \SO(d)$, hence $\epsilon^{**} = \lambda Id_{\SO(d)}$ must be a multiple of the identity.
+\textcolor{red}{copiar do caderno}
+\end{dem*}
+
+\begin{corollary}
+Let $H \subset \mathbb{P}W_d$ be the scheme cut out by the \textcolor{red}{linear?} homogeneous polynomial $\nabla(h \cdot \overrightarrow{x})-dh$. Then $\psi|_H: H \to Quot_{tf}(3\SO)$ parameterizes logarithmic sheaves.
+\end{corollary}
+\begin{dem*}
+If $[h] \in H$ then $[h] = [\nabla f]$ for some $f \in H^0\SO(d+1)$. Now $\psi|_H: [\nabla f] \mapsto [\nabla f,\mathcal{I}_J(d)] \in Quot_{tf}(3\SO)$ where $J$ is is defined by the partial derivatives of $f$.
+\end{dem*}
 
 \subsection{Given Hilbert polynomial of Jacobian ideal of n points}
 Fix an integer $d > 0$ and $P = P_{\SO(d)}-P_{\mathcal{O}_J}$ a Hilbert polynomial where $J$ is a zero dimensional scheme. Let $W_d = Hom(3\SO,\SO(d))$ as vector space and denote the (open) set of torsion-free quotients of $Quot^P(3\SO)$ by $Quot_{tf}^P(3 \SO)$.

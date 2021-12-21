@@ -1,0 +1,23 @@
+\section{Logarithmic Sheaves}
+\subsection{Basic definitions on coherent sheaves}
+\begin{definition}\cite[Mumford]{mumford2013red}
+We say that a sheaf $\mathcal{F}$ on a scheme $X$ is \textbf{quasi-coherent} if at least one of the following conditions is satisfied:
+\begin{itemize}
+    \item There exists an affine open covering $(U_i)$ of $X$ and $\mathcal{O}_{U_i}$-isomorphisms $F|{U_i} \cong \widetilde{M}_i$ for some family of $\mathcal{O}_X(U_i)$-modules $M_i$.
+    \item For every affine open set $U \subset X$ there exists an $\mathcal{O}_X(U)$-module $M$ such that $\mathcal{F}|_U \cong \widetilde{M}$.
+\end{itemize}
+If $X$ is noetherian, then a quasi-coherent sheaf $\mathcal{F}$ is said to be \textbf{coherent} if for all open affines $U \subset X$ we have that $\mathcal{F}(U)$ is a finite $\mathcal{O}_X(U)$-module. The \textbf{dual sheaf} of a coherent sheaf $\mathcal{F}$ is defined by $\mathcal{F}^* = \ihom(\mathcal{F},\mathcal{O}_X)$. We have a natural morphism $i:\mathcal{F} \to \mathcal{F}^{**}$ of $\mathcal{O}_X$-modules.
+\end{definition}
+\begin{definition}
+The \textbf{singularity set} of a coherent sheaf $\mathcal{F}$ over $X$ is given by $S(\mathcal{F}) = \{x \in X | \ \mathcal{F}_x \text{ is not free}\}$, it is a closed subset. A coherent sheaf is said to be \textbf{torsion-free} if the natural morphism $i:\mathcal{F} \to {\mathcal{F}}^{**}$ is injective. In addition if $i$ is an isomorphism we say that $\mathcal{F}$ is \textbf{reflexive}.
+\end{definition}
+
+\begin{proposition}\cite[OSS]{Okonek1980VectorBO}\label{singularitysetcodim}
+Let $\mathcal{F}$ be a sheaf over $X$ noetherian, then:
+\begin{itemize}
+    \item $codim(S(\mathcal{F})) \geq 1$ if $\mathcal{F}$ is coherent
+    \item $codim(S(\mathcal{F})) \geq 2$ if $\mathcal{F}$ is torsion-free
+    \item $codim(S(\mathcal{F})) \geq 3$ if $\mathcal{F}$ is reflexive
+\end{itemize}
+\end{proposition}
+We are interested in the case where $X = \mathbb{P}^2$ is the projective plane over a field $k$ and $\mathcal{F}$ is an ideal sheaf of some projective scheme embedded in $X$. In particular any ideal sheaf $\mathcal{I}_Z \subset \SO$ is torsion-free since $\SO$ is torsion-free, furthermore reflexivity is the same as being locally free for coherent sheaves defined over the projective plane.
