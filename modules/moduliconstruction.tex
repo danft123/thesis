@@ -12,7 +12,7 @@ Fix an integer $d>0$, let $W_d = Hom(3\SO,\SO(d))$ as vector space and let $Quot
 There exists a morphism $\psi:\mathbb{P}W_d \to Quot_{tf}(3\SO)$ parameterizing matrices of the form $3\SO \to \SO(d)$
 \end{lemma}
 \begin{dem*}
-Since $Hom_{X \times_k Y}(A \boxtimes B , A' \boxtimes B') \cong Hom_X(A,A') \otimes_k Hom_Y(B,B')$ \cite[\href{https://stacks.math.columbia.edu/tag/0BEC}{Tag 0BEC}]{stacks-project} we can define a morphism of sheaves $\phi:3\SO \boxtimes \mathcal{O}_{\mathbb{P}W_d} \to \SO(d) \boxtimes \mathcal{O}_{\mathbb{P}W_d}(1)$ by giving an element $\sum_{i=1}^N e_i \otimes_k f_i$ where $\{e_i\}_{i=1,...,N}$ is a basis for $W_d$ and $f_i$ its respective projective coordinates. In particular for any $[h] \in \mathbb{P}W_d$ represented by $h = (a_1,...,a_N)$ we have that $\phi|_{\mathbb{P}^2 \times \{[h] \}} = [h]$. \textcolor{red}{tem como deixar melhor essa ultima igualdade?}
+Since $Hom_{X \times_k Y}(A \boxtimes B , A' \boxtimes B') \cong Hom_X(A,A') \otimes_k Hom_Y(B,B')$ \cite[\href{https://stacks.math.columbia.edu/tag/0BEC}{Tag 0BEC}]{stacks-project} we can define a morphism of sheaves $\phi:3\SO \boxtimes \mathcal{O}_{\mathbb{P}W_d} \to \SO(d) \boxtimes \mathcal{O}_{\mathbb{P}W_d}(1)$ by giving an element $\sum_{i=1}^N e_i \otimes_k f_i$ where $\{e_i\}_{i=1,...,N}$ is a basis for $W_d$ and $f_i$ its respective projective coordinates. In particular for any $[h] \in \mathbb{P}W_d$ represented by $h = (a_1,...,a_N)$ we have that $\phi|_{\mathbb{P}^2 \times \{[h] \}} = [h]$.
 
 We can write $\phi:\pi_{\mathbb{P}^2}^* 3\SO \twoheadrightarrow \mathcal{E}$, where $\mathcal{E} = im(\phi)$, if (\textcolor{red}{como provar flatness aqui?}) $\mathcal{E}$ is flat over $\mathbb{P}W_d$ then we would have defined a family of quotients of $3\SO$ parameterized by $\mathbb{P}W_d$.
 
@@ -29,9 +29,9 @@ Let $[h],[h'] \in \mathbb{P}W_d$ such that $\psi([h])=\psi([h']) \in Quot(3\SO)$
 \textcolor{red}{copiar do caderno}
 \end{dem*}
 
-\begin{corollary}
-Let $H \subset \mathbb{P}W_d$ be the scheme cut out by the \textcolor{red}{linear?} homogeneous polynomial $\nabla(h \cdot \overrightarrow{x})-dh$. Then $\psi|_H: H \to Quot_{tf}(3\SO)$ parameterizes logarithmic sheaves.
-\end{corollary}
+\begin{definition}
+Let $H \subset \mathbb{P}W_d$ be the scheme cut out by the (linear) homogeneous polynomial $\nabla(h \cdot \overrightarrow{x})-d\cdot h$ \textcolor{blue}{de acordo com reuniao 21 dec, escrever isso melhor como proposicao na introducao, que é onde ficam contas basicas}. Then $\psi|_H: H \to Quot_{tf}(3\SO)$ parameterizes logarithmic sheaves.
+\end{definition}
 \begin{dem*}
 If $[h] \in H$ then $[h] = [\nabla f]$ for some $f \in H^0\SO(d+1)$. Now $\psi|_H: [\nabla f] \mapsto [\nabla f,\mathcal{I}_J(d)] \in Quot_{tf}(3\SO)$ where $J$ is is defined by the partial derivatives of $f$.
 \end{dem*}
